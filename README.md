@@ -1,5 +1,7 @@
 # @dimensionalpocket/dps-auth-session
 
+[![Rust Tests](https://github.com/dimensionalpocket/dps-auth-session-rs/actions/workflows/test.yml/badge.svg)](https://github.com/dimensionalpocket/dps-auth-session-rs/actions/workflows/test.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 A standalone Rust crate for secure session token management using AES-256-GCM encryption.
 
 ## Features
