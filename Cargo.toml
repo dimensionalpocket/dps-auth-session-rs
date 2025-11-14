@@ -1,10 +1,10 @@
 [package]
-name = "dp-auth-session-service"
+name = "dps-auth-session"
 version = "0.1.0"
 edition = "2021"
-description = "Independent authentication session service for token encoding/decoding"
+description = "Secure session token management utilities"
 license = "MIT"
-repository = "https://github.com/dimensionalpocket/auth-session-service-rust"
+repository = "https://github.com/dimensionalpocket/dps-auth-session-rs"
 authors = ["Dimensional Pocket <dimensionalpocket.com>"]
 
 [dependencies]

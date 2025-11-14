@@ -2,7 +2,7 @@ use std::fmt;
 
 /// Error types for session token operations
 #[derive(Debug)]
-pub enum DpAuthSessionError {
+pub enum DpsAuthSessionError {
   /// Token encoding failed
   EncodingError(String),
   /// Token decoding failed
@@ -15,16 +15,16 @@ pub enum DpAuthSessionError {
   JsonError(String),
 }
 
-impl fmt::Display for DpAuthSessionError {
+impl fmt::Display for DpsAuthSessionError {
   fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
     match self {
-      DpAuthSessionError::EncodingError(msg) => write!(f, "Token encoding error: {msg}"),
-      DpAuthSessionError::DecodingError(msg) => write!(f, "Token decoding error: {msg}"),
-      DpAuthSessionError::TokenExpired => write!(f, "Token has expired"),
-      DpAuthSessionError::InvalidToken(msg) => write!(f, "Invalid token: {msg}"),
-      DpAuthSessionError::JsonError(msg) => write!(f, "JSON error: {msg}"),
+      DpsAuthSessionError::EncodingError(msg) => write!(f, "Token encoding error: {msg}"),
+      DpsAuthSessionError::DecodingError(msg) => write!(f, "Token decoding error: {msg}"),
+      DpsAuthSessionError::TokenExpired => write!(f, "Token has expired"),
+      DpsAuthSessionError::InvalidToken(msg) => write!(f, "Invalid token: {msg}"),
+      DpsAuthSessionError::JsonError(msg) => write!(f, "JSON error: {msg}"),
     }
   }
 }
 
-impl std::error::Error for DpAuthSessionError {}
+impl std::error::Error for DpsAuthSessionError {}

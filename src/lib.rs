@@ -1,6 +1,6 @@
-//! # DP Auth Session Service
+//! # dps-auth-session
 //!
-//! A standalone authentication session service providing secure token encoding and decoding
+//! A standalone authentication utility struct providing secure token encoding and decoding
 //! functionality using AES-256-GCM encryption.
 //!
 //! ## Features
@@ -13,28 +13,28 @@
 //! ## Usage
 //!
 //! ```rust
-//! use dp_auth_session_service::{DpAuthSessionService, DpAuthSessionPayload};
+//! use dps_auth_session::{DpsAuthSession, DpsAuthSessionPayload};
 //!
 //! // Create a session payload
-//! let payload = DpAuthSessionService::create_payload(123);
+//! let payload = DpsAuthSession::create_payload(123, None);
 //!
 //! // Encode to token
 //! let secret = &[0u8; 32]; // Use a proper 32-byte secret in production
-//! let token = DpAuthSessionService::encode_token(&payload, secret)?;
+//! let token = DpsAuthSession::encode_token(&payload, secret)?;
 //!
 //! // Decode token back to payload
-//! let decoded = DpAuthSessionService::decode_token(&token, secret)?;
+//! let decoded = DpsAuthSession::decode_token(&token, secret)?;
 //! assert_eq!(payload.sub, decoded.sub);
 //! # Ok::<(), Box<dyn std::error::Error>>(())
 //! ```
 
 pub mod error;
 pub mod payload;
-pub mod service;
+pub mod session;
 
 /// Library version
 pub const VERSION: &str = env!("CARGO_PKG_VERSION");
 
-pub use error::DpAuthSessionError;
-pub use payload::DpAuthSessionPayload;
-pub use service::DpAuthSessionService;
+pub use error::DpsAuthSessionError;
+pub use payload::DpsAuthSessionPayload;
+pub use session::DpsAuthSession;
