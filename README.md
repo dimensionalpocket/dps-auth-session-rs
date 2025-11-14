@@ -19,7 +19,7 @@ Add this to your `Cargo.toml`:
 <!-- x-release-please-start-version -->
 ```toml
 [dependencies]
-dps-auth-session = { git = "https://github.com/dimensionalpocket/dps-auth-session-rs", tag = "0.1.0" }
+dps-auth-session = { git = "https://github.com/dimensionalpocket/dps-auth-session-rs", tag = "0.2.0" }
 ```
 <!-- x-release-please-end -->
 
